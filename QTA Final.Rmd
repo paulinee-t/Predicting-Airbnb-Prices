@@ -1,0 +1,17 @@
+---
+title: "QTA Final"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Import Airbnb Data 
+Data is from Inside Airbnb.
+The question we are trying to answer: Can we predict Airbnb prices based on reviews and features of the place? 
+
+**There are XX rows and XXX features**
+****
+```{r}
+````
