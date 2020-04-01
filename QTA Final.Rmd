@@ -8,10 +8,37 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ## Import Airbnb Data 
+```{r}
+# setwd("/Users/Pauline/Documents/LSE/MY459 Quant Text/Predicting-Airbnb-Prices/")
+# listings <- read.csv("data/listings_2018.csv")
+# save(listings, file = "listings.Rdata")
+# reviews <- read.csv("data/reviews_2018.csv")
+# save(reviews, file = "reviews.Rdata")
+
+#remove non ASCII Characters 
+# reviews$comments <- gsub('[^\x20-\x7E]', '', reviews$comments)
+# save(reviews, file = "reviews.Rdata")
+```
 Data is from Inside Airbnb.
 The question we are trying to answer: Can we predict Airbnb prices based on reviews and features of the place? 
 
-**There are XX rows and XXX features**
-****
 ```{r}
-````
+#select only informative features 
+  # listings <- subset(listings, select = c("id", "name", "summary", "space", "host_is_superhost",   "host_identity_verified", "neighbourhood_cleansed", "latitude", "longitude", "property_type", "room_type", "accommodates", "bathrooms", "bedrooms", "beds", "square_feet", "guests_included", "minimum_nights","maximum_nights","number_of_reviews","review_scores_rating"))
+      # save(listings, file = "listings.Rdata")
+
+#load in the data
+load("listings.Rdata")
+load("reviews.Rdata")
+
+View(head(listings))
+
+#Show a sample table for my graph of the data I will use 
+features <- listings[ , -which(names(listings) %in% c("name", "summary", "space"))]
+write.table(features, file = "feattable.csv", sep = ",", qmethod = "double")
+```
+
+#Data Exploration and Manipulation: 
+
+
+#
